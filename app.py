@@ -21,7 +21,7 @@ APP_URL = os.getenv("APP_URL")
 MESSAGE_DIVIDER_ENABLED = os.getenv("MESSAGE_DIVIDER_ENABLED","true")
 MESSAGE_DIVIDER_ENABLED = True if(MESSAGE_DIVIDER_ENABLED != "false" ) else False
 
-LONG_LOGS_ENABLED = os.getenv("LONG_LOGS_ENABLED","false")
+LONG_LOGS_ENABLED = os.getenv("LONG_LOGS_ENABLED","true")
 LONG_LOGS_ENABLED = True if(LONG_LOGS_ENABLED != "false" ) else False
 
 # Do not change this value to be more than 2000, discord api has a limit of 2000 characters per message
