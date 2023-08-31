@@ -63,7 +63,7 @@ def send_batch_logs(LOGS):
 def send_discord_message(message):
     payload = {"content" : message}
     headers={"Content-Type": "application/json"}
-    res = requests.post(f"https://discord.com/api/v8/channels/{CHANNEL_ID}/messages",data=json.dumps(payload),headers=headers)
+    res = requests.post(WEBHOOK_URL,data=json.dumps(payload),headers=headers)
     print(res.reason)
     return 0
 
