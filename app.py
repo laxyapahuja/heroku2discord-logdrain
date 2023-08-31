@@ -10,6 +10,7 @@ app = Flask(__name__)
 
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 CHANNEL_ID = os.getenv("CHANNEL_ID")
+WEBHOOK_URL = os.getenv("WEBHOOK_URL")
 
 # Optional config var used for populating index.html at route '/'
 APP_URL = os.getenv("APP_URL")
@@ -60,8 +61,8 @@ def send_batch_logs(LOGS):
 
 def send_discord_message(message):
     payload = {"content" : message}
-    headers={"Authorization" : f"Bot {BOT_TOKEN}"}
-    requests.post(f"https://discord.com/api/v8/channels/{CHANNEL_ID}/messages",data=payload,headers=headers)
+    headers={"Content-Type": "application/json"}
+    requests.post(WEBHOOK_URL,data=payload,headers=headers)
     return 0
 
 
